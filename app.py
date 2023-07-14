@@ -67,7 +67,7 @@ def upload():
                 mobile.append(row[3])
             # 在这里可以对links数组进行处理，如打印或保存到数据库
             data = links[1: ]
-            return render_template('upload.html', data=links)
+            return render_template('upload.html', data=data)
         return "请选择一个csv文件！"
     return render_template('upload.html')
 
