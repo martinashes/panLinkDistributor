@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传文件</title>
+</head>
+<body>
+    <nav>
+        <a href="/">首页</a>
+    </nav>
+    <h2>上传文件</h2>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <input type="file" name="csv_file" accept=".csv" required><br><br>
+        <input type="submit" value="上传">
+    </form>
+
+    {% if data %}
+    <table>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>Links</th>
+                <th>Keys</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+</html>
