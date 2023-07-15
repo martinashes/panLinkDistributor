@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>上传文件</title>
+    <title>一拇指-上传文件</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <nav>
-        <a href="/">首页</a>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">首页</a>
     </nav>
-    <h2>上传文件</h2>
-    <form action="" method="POST" enctype="multipart/form-data">
-        <input type="file" name="csv_file" accept=".csv" required><br><br>
-        <input type="submit" value="上传文件">
-    </form>
-    <div id="links-content">
+    <div class="container mt-4">
+        <h2>上传文件</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="csv_file">选择一个CSV文件</label>
+                <input type="file" class="form-control-file" id="csv_file" name="csv_file" accept=".csv" required>
+            </div><br>
+            <button type="submit" class="btn btn-primary">上传文件</button>
+        </form>
+
         {% if data %}
-        <table>
-            <thead>
+        <table class="table mt-4">
+            <thead class="thead-light">
                 <tr>
-                    <th>序号</th>
-                    <th>链接</th>
-                    <th>提取码</th>
-                    <th>手机号</th>
+                    <th scope="col">序号</th>
+                    <th scope="col">链接</th>
+                    <th scope="col">提取码</th>
+                    <th scope="col">手机号</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,5 +44,8 @@
         {% endif %}
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
