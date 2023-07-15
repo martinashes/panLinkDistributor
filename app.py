@@ -73,6 +73,6 @@ def upload():
 
 
 if __name__=="__main__":
-    # app.run()
+    app.run()
     # 本地测试用
-    app.run(port=2020, host="127.0.0.1", debug=True)
+    # app.run(port=2020, host="127.0.0.1", debug=True)
