@@ -12,29 +12,32 @@
     <h2>上传文件</h2>
     <form action="" method="POST" enctype="multipart/form-data">
         <input type="file" name="csv_file" accept=".csv" required><br><br>
-        <input type="submit" value="上传">
+        <input type="submit" value="上传文件">
     </form>
+    <div id="links-content">
+        {% if data %}
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>链接</th>
+                    <th>提取码</th>
+                    <th>手机号</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
 
-    {% if data %}
-    <table>
-        <thead>
-            <tr>
-                <th>序号</th>
-                <th>Links</th>
-                <th>Keys</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in data %}
-            <tr>
-                <td>{{ row[0] }}</td>
-                <td>{{ row[1] }}</td>
-                <td>{{ row[2] }}</td>
-                <td>{{ row[3] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% endif %}
 </body>
 </html>
